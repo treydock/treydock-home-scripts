@@ -11,6 +11,8 @@ gzip ${BACKUP_DIR}/sdcard-${DATE}
 # restore
 #  gzip -dc ~/backups/pihome/sdcard.gz | sudo dd of=/dev/sde bs=1m conv=noerror,sync
 
+ssh pi@192.168.68.127 /home/pi/prometheus-docker/backup.sh
+
 rsync -avhx --numeric-ids \
   -e "ssh -T -c aes128-gcm@openssh.com -o Compression=no -x" \
   --rsync-path "sudo rsync" \
