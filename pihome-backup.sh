@@ -18,5 +18,6 @@ rsync -avhx --numeric-ids \
   --rsync-path "sudo rsync" \
   --exclude '.cache' \
   --exclude 'Music' \
+  --exclude 'go' \
   pi@192.168.68.127:/home/pi/ \
   ${BACKUP_DIR}/home/pi/${DATE}
